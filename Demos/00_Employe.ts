@@ -11,13 +11,17 @@ class Employe {
    * @param pourcentage Pourcentage de l'augmentation
    */
   augmentation(pourcentage: number): void {
-    console.log(
-      `Le salaire de ${this.prenom} ${this.nom} va être augmenté de ${pourcentage}%. Il est actuellement de ${this.salaire}`
-    );
-    const augmentation = (this.salaire * pourcentage) / 100;
-    console.log(`Il gagnera ${augmentation}€ supplémentaires`);
-    this.salaire += augmentation;
-    console.log(`Son nouveau salaire est de ${this.salaire}€`);
+    if (pourcentage < 0) {
+        throw new Error('Le pourcentage doit être positif')
+    } else {
+      console.log(
+        `Le salaire de ${this.prenom} ${this.nom} va être augmenté de ${pourcentage}%. Il est actuellement de ${this.salaire}`
+      );
+      const augmentation = (this.salaire * pourcentage) / 100;
+      console.log(`Il gagnera ${augmentation}€ supplémentaires`);
+      this.salaire += augmentation;
+      console.log(`Son nouveau salaire est de ${this.salaire}€`);
+    }
   }
 }
 
