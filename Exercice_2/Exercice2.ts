@@ -15,6 +15,9 @@ class Chat {
   age!: number;
   poids!: number;
 
+  /**
+   * Permet d'afficher le chat
+   */
   afficherChat(): void {
     console.log(`
             Mon super chat s'appelle ${this.nom} \r
