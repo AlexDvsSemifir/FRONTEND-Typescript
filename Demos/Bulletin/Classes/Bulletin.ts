@@ -1,7 +1,7 @@
 import Note from './Note';
 
 export default class Bulletin {
-  private _notes: Note[];
+  private _notes: Note[] = [];
 
   /**
    * Ajoute une nouvelle note au carner de notes
